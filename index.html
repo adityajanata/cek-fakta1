@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Infografik: Cek Fakta "Proyek Garuda"</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = {"theme":{"extend":{"colors":{"navy":"#1F3A5F","cream":"#FFF6E9","sun":"#FFB627","teal":"#2A9D8F","coral":"#E76F51"},"fontFamily":{"sans":["Poppins","sans-serif"],"hand":["Caveat","cursive"]}}}};</script>
+  <style type="text/tailwindcss">/* Komponen slide (dipakai versi CDN & versi render PNG) */
+@layer components {
+  .slide { @apply relative overflow-hidden font-sans shrink-0; width: 1080px; height: 1080px; }
+  .blob  { @apply absolute rounded-full blur-2xl; }
+  .dots  { background-image: radial-gradient(currentColor 3px, transparent 3px); background-size: 44px 44px; }
+  .hand  { @apply font-hand font-bold; }
+
+  .label { @apply text-[32px] font-bold uppercase tracking-[0.2em] text-teal; }
+  .title { @apply mt-4 text-[70px] font-extrabold leading-[1.08] tracking-tight text-navy; }
+  .source { @apply mt-6 text-[22px] text-navy/60; }
+  .pager { @apply absolute top-[88px] right-[88px] z-20 text-[26px] font-bold px-6 py-2 rounded-full bg-black/10; }
+
+  .card       { @apply flex items-center gap-8 rounded-[36px] border-[6px] px-9 py-7 shadow-[0_18px_0_rgba(31,58,95,0.08)]; }
+  .icon-box   { @apply w-24 h-24 rounded-3xl grid place-items-center shrink-0; }
+  .card-title { @apply text-[44px] font-extrabold leading-tight; }
+  .card-text  { @apply mt-2 text-[34px] leading-snug text-navy/80; }
+
+  .mini-card { @apply flex items-center gap-7 bg-white/10 border-2 border-white/25 rounded-[32px] px-9 py-7 text-[34px] leading-snug; }
+
+  .warn-card { @apply flex flex-col gap-4 bg-white rounded-[32px] px-8 py-7 text-[32px] font-semibold leading-snug border-l-[12px] border-coral shadow-[0_14px_0_rgba(231,111,81,0.15)]; }
+  .warn-icon { @apply w-16 h-16 text-coral; }
+
+  .hotline { @apply flex flex-col items-start gap-3 bg-cream rounded-[40px] p-9 shadow-[0_18px_0_rgba(0,0,0,0.2)]; }
+}
+
+/* Slide detail "Yang diklaim vs Faktanya" */
+@layer components {
+  .title-sm { @apply mt-4 text-[62px] font-extrabold leading-[1.08] tracking-tight text-navy; }
+  .tag   { @apply flex items-center gap-3 text-[26px] font-bold uppercase tracking-[0.15em] mb-3; }
+  .claim { @apply rounded-[32px] border-4 border-dashed border-coral/60 bg-coral/10 px-9 py-6 text-[34px] leading-snug text-navy; }
+  .slide.bg-teal .claim { @apply bg-cream border-coral; }
+  .fact  { @apply rounded-[32px] border-4 border-teal bg-white px-9 py-6 text-[34px] leading-snug text-navy shadow-[0_14px_0_rgba(31,58,95,0.12)]; }
+  .note  { @apply flex items-center gap-6 rounded-[32px] bg-black/15 text-cream px-9 py-6 text-[30px] leading-snug; }
+  .law-head { @apply grid grid-cols-2 gap-6 px-8 text-[24px] font-bold uppercase tracking-[0.15em] text-sun; }
+  .law-row  { @apply grid grid-cols-2 gap-6 items-center bg-cream text-navy rounded-[28px] px-8 py-5 text-[28px] leading-snug; }
+}
+</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    /* Slide asli 1080px, diskalakan sesuai lebar frame */
+    .frame { position: relative; aspect-ratio: 1 / 1; overflow: hidden; }
+    .frame > .slide { position: absolute; top: 0; left: 0; transform-origin: top left; }
+  </style>
+</head>
+<body class="min-h-screen bg-[#F3EEE6] font-sans text-navy">
+  <main class="max-w-[640px] mx-auto px-4 py-8">
+    <header class="text-center mb-6">
+      <p class="text-sm font-semibold uppercase tracking-widest text-teal">Infografik IG · 5 slide · 1:1</p>
+      <h1 class="text-2xl sm:text-3xl font-extrabold mt-1">Cek Fakta “Proyek Garuda”</h1>
+    </header>
+
+    <!-- Carousel -->
+    <div id="viewer" class="frame rounded-3xl shadow-2xl bg-navy">
+      <!-- ============ SLIDE 1 : COVER ============ -->
+<section class="slide bg-navy text-cream" data-slide="1">
+  <div class="blob bg-sun/90 w-[620px] h-[620px] -top-48 -right-40"></div>
+  <div class="blob bg-teal/70 w-[420px] h-[420px] -bottom-40 -left-32"></div>
+  <div class="dots absolute inset-0 opacity-20"></div>
+
+  <div class="relative z-10 flex flex-col h-full p-[88px]">
+    <span class="anim inline-flex items-center gap-4 self-start bg-cream text-navy font-bold text-[30px] px-8 py-4 rounded-full shadow-xl">
+      <svg class="w-10 h-10 text-coral" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m8 11 2 2 4-4" />
+  <circle cx="11" cy="11" r="8" />
+  <path d="m21 21-4.3-4.3" />
+</svg>
+      Cek Fakta Sebelum Percaya
+    </span>
+
+    <h1 class="anim mt-14 font-extrabold text-[92px] leading-[1.05] tracking-tight">
+      Ada ajakan jadi<br>
+      <span class="text-sun">“Penerima Manfaat</span><br>
+      <span class="text-sun">Proyek Garuda”?</span>
+    </h1>
+
+    <p class="anim mt-10 text-[42px] leading-snug font-medium text-cream/90 max-w-[820px]">
+      Yuk, kenali faktanya bareng-bareng supaya <b class="text-cream">uang &amp; data keluarga</b> tetap aman.
+    </p>
+
+    <div class="mt-auto flex items-end justify-between">
+      <div class="anim flex items-center gap-5">
+        <div class="w-24 h-24 rounded-3xl bg-cream grid place-items-center shadow-xl">
+          <svg class="w-14 h-14 text-teal" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" />
+</svg>
+        </div>
+        <!-- <p class="text-[30px] leading-tight text-cream/80">Info ringkas<br><b class="text-cream">untuk Bapak &amp; Ibu</b></p> -->
+      </div>
+      <p class="anim hand text-[64px] text-sun flex items-center gap-3">Geser yuk <svg class="w-14 h-14" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg></p>
+    </div>
+  </div>
+  <div class="pager">1/8</div>
+</section>
+
+<!-- ============ SLIDE 2 : PROYEK GARUDA ASLI ============ -->
+<section class="slide bg-cream text-navy" data-slide="2">
+  <div class="blob bg-sun/40 w-[520px] h-[520px] -top-56 -left-40"></div>
+  <div class="relative z-10 flex flex-col h-full px-[88px] pt-[88px] pb-[56px]">
+    <p class="anim label">Fakta #1</p>
+    <h2 class="anim title">“Proyek Garuda” yang asli itu apa sih?</h2>
+
+    <div class="mt-8 mb-8 grid gap-6">
+      <div class="anim card border-teal bg-white">
+        <div class="icon-box bg-teal"><svg class="w-16 h-16 text-white" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" />
+</svg></div>
+        <div>
+          <p class="card-title text-teal">Proyek riset Bank Indonesia</p>
+          <p class="card-text">Mengembangkan <b>Rupiah Digital</b>, uang rupiah versi digital.</p>
+        </div>
+      </div>
+      <div class="anim card border-coral bg-white">
+        <div class="icon-box bg-coral"><svg class="w-16 h-16 text-white" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+</svg></div>
+        <div>
+          <p class="card-title text-coral">Bukan bagi-bagi dana</p>
+          <p class="card-text">Tidak ada pendaftaran “penerima manfaat” untuk perorangan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="anim mt-auto flex items-center gap-6 bg-navy text-cream rounded-[36px] px-10 py-7">
+      <svg class="w-14 h-14 text-sun shrink-0" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 16v-4" />
+  <path d="M12 8h.01" />
+</svg>
+      <p class="text-[34px] leading-snug">Namanya mirip, isinya <b class="text-sun">sangat berbeda</b>.</p>
+    </div>
+    <p class="source">Sumber: bi.go.id (Rupiah Digital – Proyek Garuda)</p>
+  </div>
+  <div class="pager">2/8</div>
+</section>
+
+<!-- ============ SLIDE 3 : FAKTA 2A - QFS ============ -->
+<section class="slide bg-teal text-cream" data-slide="3">
+  <div class="dots absolute inset-0 opacity-15"></div>
+  <div class="blob bg-sun/60 w-[460px] h-[460px] -bottom-52 -right-40"></div>
+  <div class="relative z-10 flex flex-col h-full p-[88px]">
+    <p class="anim label !text-sun">Fakta #2 · Istilah 1 dari 4</p>
+    <h2 class="anim title-sm !text-cream">“Sistem QFS” itu apa?</h2>
+
+    <div class="anim claim mt-7">
+      <p class="tag text-coral"><svg class="w-9 h-9" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14 14a2 2 0 0 0 2-2V8h-2" />
+  <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
+  <path d="M8 14a2 2 0 0 0 2-2V8H8" />
+</svg>Yang diklaim</p>
+      <p>Sistem keuangan rahasia berbasis kuantum &amp; emas yang akan <b>menggantikan semua bank</b>.</p>
+    </div>
+    <div class="anim fact mt-5 mb-8">
+      <p class="tag text-teal"><svg class="w-9 h-9" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+  <path d="m16 9-5.5 5.5L8 12" />
+</svg>Faktanya</p>
+      <p>Belum ada satu pun <b>bank sentral, pemerintah, atau regulator</b> yang mengakui QFS itu ada.</p>
+    </div>
+
+    <div class="anim note mt-auto">
+      <svg class="w-12 h-12 text-sun shrink-0" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+  <path d="M12 9v4" />
+  <path d="M12 17h.01" />
+</svg>
+      <p>Di luar negeri, nama QFS sering dipakai untuk menipu, misalnya <b>situs “dompet QFS”</b> dan <b>koin QFS palsu</b>.</p>
+    </div>
+    <p class="source !text-cream/70">Sumber: cek fakta Lead Stories, PostQuantum, FXLeaders</p>
+  </div>
+  <div class="pager">3/8</div>
+</section>
+
+<!-- ============ SLIDE 4 : FAKTA 2B - JAMINAN EMAS ============ -->
+<section class="slide bg-cream text-navy" data-slide="4">
+  <div class="blob bg-sun/45 w-[520px] h-[520px] -top-60 -right-44"></div>
+  <div class="relative z-10 flex flex-col h-full p-[88px]">
+    <p class="anim label">Fakta #2 · Istilah 2 dari 4</p>
+    <h2 class="anim title-sm">“Jaminan emas atas nama seseorang”?</h2>
+
+    <div class="anim claim mt-7">
+      <p class="tag text-coral"><svg class="w-9 h-9" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14 14a2 2 0 0 0 2-2V8h-2" />
+  <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
+  <path d="M8 14a2 2 0 0 0 2-2V8H8" />
+</svg>Yang diklaim</p>
+      <p>BIS menyimpan emas atas nama satu orang, lalu dipakai <b>mencetak uang untuk dibagikan</b>.</p>
+    </div>
+    <div class="anim fact mt-5 mb-8">
+      <p class="tag text-teal"><svg class="w-9 h-9" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+  <path d="m16 9-5.5 5.5L8 12" />
+</svg>Faktanya</p>
+      <p>BIS adalah “bank”-nya para bank sentral dan <b>tidak mencetak uang</b> untuk siapa pun. Rupiah hanya dikeluarkan oleh <b>Bank Indonesia</b>.</p>
+    </div>
+
+    <div class="anim note !bg-navy mt-auto">
+      <svg class="w-12 h-12 text-sun shrink-0" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+  <path d="M9 18h6" />
+  <path d="M10 22h4" />
+</svg>
+      <p><b class="text-sun">ATMR</b> = Aset Tertimbang Menurut Risiko, istilah hitung modal bank. <b>Bukan harta simpanan.</b></p>
+    </div>
+  </div>
+  <div class="pager">4/8</div>
+</section>
+
+<!-- ============ SLIDE 5 : FAKTA 2C - PASAL HUKUM ============ -->
+<section class="slide bg-teal text-cream" data-slide="5">
+  <div class="dots absolute inset-0 opacity-15"></div>
+  <div class="blob bg-sun/50 w-[420px] h-[420px] -top-52 -right-40"></div>
+  <div class="relative z-10 flex flex-col h-full p-[88px]">
+    <p class="anim label !text-sun">Fakta #2 · Istilah 3 dari 4</p>
+    <h2 class="anim title-sm !text-cream">Banyak pasal belum tentu resmi</h2>
+
+    <div class="anim law-head mt-8">
+      <span>Yang tertulis</span><span>Aslinya</span>
+    </div>
+    <div class="grid gap-4 mt-3">
+      <div class="anim law-row">
+        <p><b>UUD Pasal 28H (3)</b><br>“…manusia yang <s class="decoration-coral decoration-4">abadi</s>”</p>
+        <p>“…manusia yang <b class="text-teal">bermartabat</b>”</p>
+      </div>
+      <div class="anim law-row">
+        <p><b>UU P2SK</b><br>No. 4 Tahun <s class="decoration-coral decoration-4">2026</s></p>
+        <p>No. 4 Tahun <b class="text-teal">2023</b></p>
+      </div>
+      <div class="anim law-row">
+        <p><b>“Pemilik manfaat”</b><br>= penerima dana</p>
+        <p>Aturan untuk mengungkap <b class="text-teal">pemilik asli perusahaan</b>, demi mencegah pencucian uang</p>
+      </div>
+    </div>
+
+    <p class="anim mt-auto text-[30px] leading-snug flex items-center gap-4">
+      <svg class="w-11 h-11 text-sun shrink-0" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3v18" />
+  <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" />
+  <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M7 21h10" />
+</svg>
+      Daftar pasal yang panjang sering dipakai supaya terlihat meyakinkan.
+    </p>
+    <p class="source !text-cream/70 !mt-3">Sumber: UUD 1945, UU 4/2023, Perpres 13/2018</p>
+  </div>
+  <div class="pager">5/8</div>
+</section>
+
+<!-- ============ SLIDE 6 : FAKTA 2D - WDR & BO ============ -->
+<section class="slide bg-[#FFE9BD] text-navy" data-slide="6">
+  <div class="blob bg-teal/30 w-[480px] h-[480px] -bottom-56 -left-40"></div>
+  <div class="relative z-10 flex flex-col h-full p-[88px]">
+    <p class="anim label !text-coral">Fakta #2 · Istilah 4 dari 4</p>
+    <h2 class="anim title-sm">Syarat “terhubung dengan WDR &amp; BO”</h2>
+
+    <div class="anim claim !bg-white/70 mt-7">
+      <p class="tag text-coral"><svg class="w-9 h-9" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14 14a2 2 0 0 0 2-2V8h-2" />
+  <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
+  <path d="M8 14a2 2 0 0 0 2-2V8H8" />
+</svg>Yang diklaim</p>
+      <p>Harus terhubung dengan WDR/BO yang punya <b>akta notaris</b> supaya dana bisa cair.</p>
+    </div>
+    <div class="anim fact mt-5 mb-8">
+      <p class="tag text-teal"><svg class="w-9 h-9" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+  <path d="m16 9-5.5 5.5L8 12" />
+</svg>Faktanya</p>
+      <p>Bantuan resmi tidak mensyaratkan “koneksi” lewat perantara. Akta notaris juga <b>bukan bukti</b> program dari BI atau pemerintah.</p>
+    </div>
+
+    <div class="anim note !bg-navy mt-auto">
+      <svg class="w-12 h-12 text-sun shrink-0" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" />
+  <path d="M12 7v5l4 2" />
+</svg>
+      <p>Mirip kabar lama <b class="text-sun">“harta warisan Soekarno”</b>: bayar admin, tapi dana tak pernah cair.</p>
+    </div>
+  </div>
+  <div class="pager">6/8</div>
+</section>
+
+<!-- ============ SLIDE 7 : TANDA WASPADA ============ -->
+<section class="slide bg-cream text-navy" data-slide="7">
+  <div class="blob bg-coral/25 w-[560px] h-[560px] -top-60 -right-48"></div>
+  <div class="relative z-10 flex flex-col h-full p-[88px]">
+    <p class="anim label !text-coral">Kenali tandanya</p>
+    <h2 class="anim title">Hati-hati kalau diminta…</h2>
+
+    <ul class="mt-8 grid grid-cols-2 gap-5">
+      <li class="anim warn-card"><svg class="warn-icon" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+  <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+</svg><span>Bayar biaya admin, notaris, atau aktivasi</span></li>
+      <li class="anim warn-card"><svg class="warn-icon" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13 19a4 4 0 00-8 0" />
+  <path d="M16 10h2" />
+  <path d="M16 14h2" />
+  <circle cx="9" cy="12" r="3" />
+  <rect x="2" y="5" width="20" height="14" rx="2" />
+</svg><span>Kirim foto KTP, KK, atau nomor rekening</span></li>
+      <li class="anim warn-card"><svg class="warn-icon" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+  <circle cx="9" cy="7" r="4" />
+</svg><span>Mengajak keluarga &amp; teman ikut daftar</span></li>
+      <li class="anim warn-card"><svg class="warn-icon" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 22h14" />
+  <path d="M5 2h14" />
+  <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+  <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+</svg><span>Dijanjikan “sebentar lagi cair” terus-menerus</span></li>
+    </ul>
+
+    <div class="anim mt-auto flex items-center gap-6 bg-sun rounded-[36px] px-10 py-8">
+      <svg class="w-16 h-16 text-navy shrink-0" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" />
+  <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" />
+  <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" />
+  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
+</svg>
+      <p class="text-[36px] leading-snug font-semibold">Ada satu saja? <b>Berhenti dulu</b>, lalu tanyakan ke pihak resmi.</p>
+    </div>
+  </div>
+  <div class="pager">7/8</div>
+</section>
+
+<!-- ============ SLIDE 8 : TANYA DULU ============ -->
+<section class="slide bg-navy text-cream" data-slide="8">
+  <div class="blob bg-teal/60 w-[520px] h-[520px] -top-56 -left-40"></div>
+  <div class="blob bg-sun/80 w-[380px] h-[380px] -bottom-44 -right-28"></div>
+  <div class="relative z-10 flex flex-col h-full p-[88px]">
+    <p class="anim label !text-sun">Kalau ragu</p>
+    <h2 class="anim title !text-cream">Tanyakan langsung, gratis &amp; resmi</h2>
+
+    <div class="mt-10 grid grid-cols-2 gap-8">
+      <div class="anim hotline">
+        <svg class="w-12 h-12 text-teal" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+</svg>
+        <p class="text-[120px] font-extrabold leading-none text-navy">131</p>
+        <p class="text-[30px] font-semibold text-navy/80">Bank Indonesia<br>(BICARA)</p>
+      </div>
+      <div class="anim hotline">
+        <svg class="w-12 h-12 text-teal" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+</svg>
+        <p class="text-[120px] font-extrabold leading-none text-navy">157</p>
+        <p class="text-[30px] font-semibold text-navy/80">Otoritas Jasa<br>Keuangan (OJK)</p>
+      </div>
+    </div>
+
+    <div class="anim mt-10 grid gap-4 text-[34px]">
+      <p class="flex items-center gap-4"><svg class="w-11 h-11 text-sun shrink-0" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M4.929 4.929 19.07 19.071" />
+</svg>Jangan transfer &amp; jangan kirim data diri</p>
+      <p class="flex items-center gap-4"><svg class="w-11 h-11 text-sun shrink-0" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+  <path d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224 3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z" />
+</svg>Ngobrol dulu dengan anak atau keluarga</p>
+    </div>
+
+    <p class="anim mt-auto hand text-[58px] text-sun leading-tight">Saling mengingatkan itu tanda sayang <svg class="inline w-12 h-12 fill-coral text-coral" aria-hidden="true"
+  
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+</svg></p>
+  </div>
+  <div class="pager">8/8</div>
+</section>
+
+    </div>
+
+    <!-- Kontrol -->
+    <div class="flex items-center justify-between mt-5">
+      <button id="prev" class="nav-btn w-14 h-14 rounded-full bg-white shadow text-2xl font-bold hover:scale-105 transition" aria-label="Sebelumnya">‹</button>
+      <div id="dots" class="flex gap-2"></div>
+      <button id="next" class="nav-btn w-14 h-14 rounded-full bg-navy text-cream shadow text-2xl font-bold hover:scale-105 transition" aria-label="Berikutnya">›</button>
+    </div>
+    <p class="text-center text-sm text-navy/60 mt-4">Tip: pakai tombol panah keyboard atau geser di HP. File PNG 1080×1080 siap upload ada di chat.</p>
+  </main>
+
+  <script>
+    const viewer = document.getElementById('viewer');
+    const slides = [...viewer.querySelectorAll('.slide')];
+    const dotsBox = document.getElementById('dots');
+    let current = 0;
+
+    // Skala slide 1080px ke lebar frame
+    const fit = () => {
+      const scale = viewer.clientWidth / 1080;
+      slides.forEach((s) => (s.style.transform = `scale(${scale})`));
+    };
+    new ResizeObserver(fit).observe(viewer);
+
+    // Titik navigasi
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'h-3 rounded-full transition-all bg-navy/25';
+      dot.setAttribute('aria-label', `Slide ${i + 1}`);
+      dot.onclick = () => show(i);
+      dotsBox.appendChild(dot);
+    });
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((s, i) => (s.style.visibility = i === current ? 'visible' : 'hidden'));
+      [...dotsBox.children].forEach((d, i) => {
+        d.style.width = i === current ? '32px' : '12px';
+        d.style.background = i === current ? '#1F3A5F' : 'rgba(31,58,95,.25)';
+      });
+
+      // Animasi masuk pakai GSAP
+      const slide = slides[current];
+      if (window.gsap) {
+        gsap.fromTo(slide.querySelectorAll('.anim'),
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7, stagger: 0.12, ease: 'back.out(1.6)' });
+        gsap.fromTo(slide.querySelectorAll('.blob'),
+          { scale: 0.6, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 1.2, ease: 'power2.out' });
+      }
+    }
+
+    document.getElementById('prev').onclick = () => show(current - 1);
+    document.getElementById('next').onclick = () => show(current + 1);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') show(current + 1);
+      if (e.key === 'ArrowLeft') show(current - 1);
+    });
+
+    // Swipe di HP
+    let startX = null;
+    viewer.addEventListener('touchstart', (e) => (startX = e.touches[0].clientX), { passive: true });
+    viewer.addEventListener('touchend', (e) => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+      startX = null;
+    });
+
+    fit();
+    show(0);
+  </script>
+</body>
+</html>
